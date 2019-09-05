@@ -15,6 +15,7 @@ public class Login extends AppCompatActivity {
     Button btnlog;
     TextView reg;
     DatabaseHelper db;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().setTitle("Login");
 
 
+        intent = new Intent(this, searchBlood.class);
 
         db=new DatabaseHelper(this);
         Username=(EditText)findViewById(R.id.editTextName);
@@ -45,7 +47,9 @@ public class Login extends AppCompatActivity {
 
                 if (res == true)
                 {
-                    Toast.makeText(Login.this,"Sucessfull  ",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Login.this,"Sucessfull  ",Toast.LENGTH_SHORT).show();
+
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(Login.this,"Error  ",Toast.LENGTH_SHORT).show();

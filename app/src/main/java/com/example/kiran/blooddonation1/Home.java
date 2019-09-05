@@ -63,7 +63,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent inti = new Intent(Home.this, SearchResult.class);
+                Intent inti = new Intent(Home.this, searchResult.class);
 
                 startActivity(inti);
 //viewData();

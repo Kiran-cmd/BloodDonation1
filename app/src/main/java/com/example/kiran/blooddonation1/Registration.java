@@ -67,13 +67,13 @@ TextView login;
                 String bg=bloodgrp.getSelectedItem().toString();
                 String phnno= phoneno.getText().toString().trim();
                 String confpass=confpwd.getText().toString().trim();
-               // String location1=loc1.getSelectedItem().toString();
+                String location1 = loc1.getSelectedItem().toString();
                // String location1=loc1.getSelectedItem().toString();
 
 
 
                 if (pwd.equals(confpass)){
-                    long val=db.addUser(user,phnno,bg,pwd);
+                    long val = db.addUser(user, phnno, bg, pwd, location1);
                     if (val>0){
                         Toast.makeText(Registration.this,"Sucessfull reg  ",Toast.LENGTH_SHORT).show();
                     }else {
