@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundcolor"
+    tools:context=".MainHome">
+
+    <ImageView
+        android:layout_width="226dp"
+        android:layout_height="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/logo"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="7dp" />
+
+    <Button
+        android:id="@+id/btnSearchDonorMainHome"
+        android:layout_width="236dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:background="@drawable/redbutton1"
+        android:text="Search Donor"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <Button
+        android:id="@+id/btnBloodBank"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="202dp"
+        android:background="@drawable/redbutton1"
+        android:text="Blood Bank"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+    <Button
+        android:id="@+id/btnDonorLogin"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/redbutton1"
+        android:text="Donor Login"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <Button
+        android:id="@+id/btnRegDonor"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="51dp"
+        android:background="@drawable/redbutton1"
+        android:text="Register Donor"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="321dp" />
+</RelativeLayout>
