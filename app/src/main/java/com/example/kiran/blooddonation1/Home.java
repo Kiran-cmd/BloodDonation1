@@ -1,15 +1,13 @@
 package com.example.kiran.blooddonation1;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -63,7 +61,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent inti = new Intent(Home.this, SearchResult.class);
+                Intent inti = new Intent(Home.this, searchResult.class);
 
                 startActivity(inti);
 //viewData();

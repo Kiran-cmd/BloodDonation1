@@ -1,8 +1,8 @@
 package com.example.kiran.blooddonation1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,12 +30,12 @@ TextView login;
 
         //for adding content in array
         Spinner mySpin=(Spinner)findViewById(R.id.spinner2);
-        ArrayAdapter<CharSequence> myAdapter=  ArrayAdapter.createFromResource(this,R.array.location,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> myAdapter=  ArrayAdapter.createFromResource(this, R.array.location,android.R.layout.simple_spinner_item);
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpin.setAdapter(myAdapter);
 
         Spinner mySpin1=(Spinner)findViewById(R.id.spinner4);
-        ArrayAdapter<CharSequence> myAdapter1=  ArrayAdapter.createFromResource(this,R.array.names,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> myAdapter1=  ArrayAdapter.createFromResource(this, R.array.names,android.R.layout.simple_spinner_item);
         myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpin1.setAdapter(myAdapter1);
 
@@ -67,13 +67,13 @@ TextView login;
                 String bg=bloodgrp.getSelectedItem().toString();
                 String phnno= phoneno.getText().toString().trim();
                 String confpass=confpwd.getText().toString().trim();
-               // String location1=loc1.getSelectedItem().toString();
+                String location1 = loc1.getSelectedItem().toString();
                // String location1=loc1.getSelectedItem().toString();
 
 
 
                 if (pwd.equals(confpass)){
-                    long val=db.addUser(user,phnno,bg,pwd);
+                    long val = db.addUser(user, phnno, bg, pwd, location1);
                     if (val>0){
                         Toast.makeText(Registration.this,"Sucessfull reg  ",Toast.LENGTH_SHORT).show();
                     }else {

@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchResult">
+    tools:context=".searchResult">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="47dp">
+
+        <ListView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="645dp" />
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
