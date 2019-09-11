@@ -1,6 +1,7 @@
 package com.example.kiran.blooddonation1;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListAdapter;
@@ -17,9 +18,9 @@ public class searchResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
         DatabaseHelper db = new DatabaseHelper(this);
+        db=new DatabaseHelper(this);
 
         Intent intent = getIntent();
-
 
         ArrayList<HashMap<String, String>> userList = db.GetSearchBloodResult(intent.getStringExtra("loc"), intent.getStringExtra("bgrp"));
         ListView lv = (ListView) findViewById(R.id.searchView);

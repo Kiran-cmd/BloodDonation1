@@ -34,7 +34,7 @@ public class searchBlood extends AppCompatActivity {
         mySpin1.setAdapter(myAdapter1);
 
 
-        Button b1 = findViewById(R.id.btnSearch);
+        Button b1 = findViewById(R.id.btnSearch2);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +49,14 @@ public class searchBlood extends AppCompatActivity {
             }
         });
 
+        Button b2=findViewById(R.id.profile);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
 
     }
 }

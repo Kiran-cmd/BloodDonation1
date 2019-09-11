@@ -90,5 +90,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return userList;
     }
+//
+    public ArrayList<HashMap<String, String>> GetDetails(String name, String loc){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> userDetails = new ArrayList<>();
+        String query = "SELECT userName, PhoneNO, BloodGroup, Location FROM " + TABLE_NAME + " WHERE Location='" + loc + "' AND UserName='" + name + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()) {
+            HashMap<String, String> user = new HashMap<>();
+            user.put("name", cursor.getString(cursor.getColumnIndex(COL_2)));
+            user.put("phoneNO", cursor.getString(cursor.getColumnIndex(COL_3)));
+            user.put("location", cursor.getString(cursor.getColumnIndex(COL_6)));
+            user.put("bloodgroup", cursor.getString(cursor.getColumnIndex(COL_4)));
+            userDetails.add(user);}
+        return userDetails;
+    }
+
 
 }

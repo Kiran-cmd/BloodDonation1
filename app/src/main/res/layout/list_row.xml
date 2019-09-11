@@ -3,44 +3,87 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="137dp"
+        android:background="@drawable/backgroundcolor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="1dp">
 
         <TextView
             android:id="@+id/sname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="160dp"
+            android:text="Name"
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/sloc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Location" />
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/sname"
+            android:layout_marginTop="33dp"
+            android:text="Location"
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/sbloodg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sloc"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="false"
-            android:text="Bloodgrp" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/sname"
+            android:layout_marginBottom="47dp"
+            android:text="Bloodgrp"
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/sphone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sname"
-            android:layout_alignParentBottom="false"
-            android:text="Phone" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/sname"
+            android:layout_marginBottom="15dp"
+            android:text="Phone"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/name"
+            android:layout_alignTop="@+id/sloc"
+            android:text="LOCATION:-" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/name"
+            android:layout_alignTop="@+id/sbloodg"
+            android:text="BLOOD-TYPE:-" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/name"
+            android:layout_alignTop="@+id/sphone"
+            android:text="PHONE-NO" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME:-" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
