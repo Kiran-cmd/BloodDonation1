@@ -11,13 +11,20 @@ import android.widget.Spinner;
 public class searchBlood extends AppCompatActivity {
 
 
-    Intent intent;
+    Intent intent,intentProfile;
     Spinner mySpin1, mySpin;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_blood);
+
+            username=this.getIntent().getStringExtra("uname");
+
+        intentProfile=new Intent(this,UserProfile.class);
+
+
 
 
         intent = new Intent(this, searchResult.class);
@@ -53,6 +60,9 @@ public class searchBlood extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                intentProfile.putExtra("uname",username);
+                startActivity(intentProfile);
 
 
             }

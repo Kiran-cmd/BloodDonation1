@@ -2,9 +2,11 @@ package com.example.kiran.blooddonation1;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -105,6 +107,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             userDetails.add(user);}
         return userDetails;
     }
+
+    public   String[] GetUserDetails(String uname)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String user[]=new String[4];
+        ArrayList<HashMap<String, String>> userDetails = new ArrayList<>();
+        String query = "SELECT userName, PhoneNO, BloodGroup, Location FROM " + TABLE_NAME + " WHERE UserName='" + uname + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.getCount()>0) {
+            cursor.moveToFirst();
+            user[0] = cursor.getString(cursor.getColumnIndex(COL_2));
+            user[1] = cursor.getString(cursor.getColumnIndex(COL_3));
+            user[2] = cursor.getString(cursor.getColumnIndex(COL_4));
+            user[3] = cursor.getString(cursor.getColumnIndex(COL_6));
+
+
+
+                }
+
+        return user;
+    }
+
+
 
 
 }
