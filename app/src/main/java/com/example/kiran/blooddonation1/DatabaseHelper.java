@@ -130,6 +130,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+        public boolean updateData(String userName, String PhoneNo, String BloodGrp,String loc){
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues= new ContentValues();
+
+            contentValues.put("UserName",userName);
+            contentValues.put("PhoneNO",PhoneNo);
+            contentValues.put("BloodGroup",BloodGrp);
+            contentValues.put("Location", loc);
+            db.update(TABLE_NAME,contentValues,"UserName = ?",new String[] {userName});
+            return true;
+        }
+
 
 
 }

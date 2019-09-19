@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView"
-        android:layout_alignStart="@+id/editTextPass"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="58dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -21,8 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="45dp"
+        android:layout_alignStart="@+id/editTextName"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -30,10 +30,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="133dp"
+        android:layout_toStartOf="@+id/btnLogin"
         android:text="Username" />
 
     <TextView
@@ -47,7 +46,7 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="225dp"
+        android:layout_width="197dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -61,14 +60,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="93dp"
+        android:layout_marginBottom="122dp"
         android:text="Register ?" />
 
     <ImageView
         android:layout_width="203dp"
         android:layout_height="86dp"
-        android:layout_above="@+id/editTextName"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
         android:background="@drawable/logo" />
 
 </RelativeLayout>
