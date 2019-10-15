@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="register.db";
@@ -77,11 +79,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+    public boolean hasBloodResult(String loc, String bgrp)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT userName, PhoneNO, BloodGroup, Location FROM " + TABLE_NAME + " WHERE Location='" + loc + "' AND BloodGroup='" + bgrp + "'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.getCount()==0)
+        {
+            return false;
+
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+
     public ArrayList<HashMap<String, String>> GetSearchBloodResult(String loc, String bgrp) {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
         String query = "SELECT userName, PhoneNO, BloodGroup, Location FROM " + TABLE_NAME + " WHERE Location='" + loc + "' AND BloodGroup='" + bgrp + "'";
         Cursor cursor = db.rawQuery(query, null);
+
         while (cursor.moveToNext()) {
             HashMap<String, String> user = new HashMap<>();
             user.put("name", cursor.getString(cursor.getColumnIndex(COL_2)));
@@ -121,9 +144,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             user[1] = cursor.getString(cursor.getColumnIndex(COL_3));
             user[2] = cursor.getString(cursor.getColumnIndex(COL_4));
             user[3] = cursor.getString(cursor.getColumnIndex(COL_6));
-
-
-
                 }
 
         return user;
@@ -144,4 +164,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
+
+         public int getBloodReoprt(String bg)
+         {
+             SQLiteDatabase report1 = this.getReadableDatabase();
+
+             String query = "SELECT * FROM " + TABLE_NAME + " WHERE BloodGroup='"+bg+"'";
+             Cursor cursor = report1.rawQuery(query, null);
+
+             return cursor.getCount();
+         }
 }

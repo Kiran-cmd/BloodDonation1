@@ -15,10 +15,10 @@
 
 
     <string-array name="location">
-        <item>South Mumbai</item>
-        <item>Navi Mumbai</item>
-        <item>Thane</item>
         <item>Kalyan</item>
+        <item>Dombivli</item>
+        <item>Ulhasnagar</item>
+        <item>Badlapur</item>
 
 
     </string-array>

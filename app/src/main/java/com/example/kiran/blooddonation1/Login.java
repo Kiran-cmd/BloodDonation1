@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class Login extends AppCompatActivity {
     EditText Username;
     EditText Password;
-    Button btnlog;
+    Button btnlog,backbtn;
     TextView reg;
     DatabaseHelper db;
     Intent intent;
@@ -30,6 +30,14 @@ public class Login extends AppCompatActivity {
         Password=(EditText)findViewById(R.id.editTextPass);
         btnlog=(Button) findViewById(R.id.btnLogin);
         reg=(TextView) findViewById(R.id.textViewReg);
+        backbtn=(Button)findViewById(R.id.buttonbackLogin);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Intent=new Intent(Login.this,MainHome.class);
+                startActivity(Intent);
+            }
+        });
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +55,7 @@ public class Login extends AppCompatActivity {
 
                 if (res == true)
                 {
-                    //Toast.makeText(Login.this,"Sucessfull  ",Toast.LENGTH_SHORT).show();
+
                         intent.putExtra("uname",user);
                     startActivity(intent);
                 }

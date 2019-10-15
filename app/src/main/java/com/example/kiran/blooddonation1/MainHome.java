@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainHome extends AppCompatActivity {
-Button btn1,btn2,btn3,btn4;
+Button btn1,btn2,btn3,btn4,btnBloodBank;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,8 @@ Button btn1,btn2,btn3,btn4;
         btn3=(Button)findViewById(R.id.btnDonorLogin);
 
         btn4=(Button)findViewById(R.id.btnRegDonor);
+
+        btnBloodBank=(Button)findViewById(R.id.btnBloodBank);
 
 //to search blood group
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -48,5 +50,15 @@ Button btn1,btn2,btn3,btn4;
                 startActivity(intent);
             }
         });
+        btnBloodBank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainHome.this,bloodBank.class);
+                startActivity(intent);
+
+            }
+        }
+      );
+
     }
 }

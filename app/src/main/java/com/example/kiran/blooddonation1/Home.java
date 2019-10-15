@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,6 +27,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().setTitle("Search Donor");
         list = new ArrayList<>();
+        db =new DatabaseHelper(this);
 
         //for adding items in the arrar/Dropdown list
          final Spinner mySpink = (Spinner) findViewById(R.id.spinner1);
@@ -46,11 +48,19 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                intent.putExtra("loc", mySpin1k.getSelectedItem().toString());
 
-                intent.putExtra("bgrp", mySpink.getSelectedItem().toString());
+                if(db.hasBloodResult( mySpin1k.getSelectedItem().toString(),mySpink.getSelectedItem().toString())) {
+                    intent.putExtra("loc", mySpin1k.getSelectedItem().toString());
 
-                startActivity(intent);
+                    intent.putExtra("bgrp", mySpink.getSelectedItem().toString());
+
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(Home.this,"No Donor Available!!!",Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         });

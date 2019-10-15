@@ -9,10 +9,10 @@
 
     <Button
         android:id="@+id/btnSearch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="148dp"
-        android:layout_marginStart="56dp"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="172dp"
+        android:layout_marginStart="92dp"
         android:background="@drawable/redbutton"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,30 +20,30 @@
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginStart="56dp"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/redbutton"
         android:text="Profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch2" />
 
     <Spinner
         android:id="@+id/SpBloodgrp"
         android:layout_width="228dp"
         android:layout_height="34dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="220dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/SpLoc"
         android:layout_width="227dp"
-        android:layout_height="31dp"
+        android:layout_height="27dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="152dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,4 +82,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSearchBloodBack"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/redbutton"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile" />
 </android.support.constraint.ConstraintLayout>

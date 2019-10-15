@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class searchBlood extends AppCompatActivity {
 
@@ -14,15 +15,18 @@ public class searchBlood extends AppCompatActivity {
     Intent intent,intentProfile;
     Spinner mySpin1, mySpin;
     String username;
+    Button bckbtn;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_blood);
-
+        getSupportActionBar().setTitle("Search Blood");
             username=this.getIntent().getStringExtra("uname");
 
         intentProfile=new Intent(this,UserProfile.class);
+        db= new DatabaseHelper(this);
 
 
 
@@ -30,6 +34,14 @@ public class searchBlood extends AppCompatActivity {
         intent = new Intent(this, searchResult.class);
 
 
+        bckbtn = (Button)findViewById(R.id.buttonSearchBloodBack);
+        bckbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(searchBlood.this,Login.class);
+                startActivity(intent);
+            }
+        });
         mySpin = (Spinner) findViewById(R.id.SpLoc);
         ArrayAdapter<CharSequence> myAdapter = ArrayAdapter.createFromResource(this, R.array.location, android.R.layout.simple_spinner_item);
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -46,13 +58,17 @@ public class searchBlood extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("loc", mySpin.getSelectedItem().toString());
+                if(db.hasBloodResult(mySpin.getSelectedItem().toString(),mySpin1.getSelectedItem().toString())) {
+                    intent.putExtra("loc", mySpin.getSelectedItem().toString());
 
-                intent.putExtra("bgrp", mySpin1.getSelectedItem().toString());
+                    intent.putExtra("bgrp", mySpin1.getSelectedItem().toString());
 
-                startActivity(intent);
+                    startActivity(intent);
 
-
+                }else
+                {
+                    Toast.makeText(searchBlood.this,"No Donor Available!!!",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

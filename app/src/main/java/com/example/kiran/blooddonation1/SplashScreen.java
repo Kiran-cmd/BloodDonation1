@@ -9,6 +9,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle("Blood Donation Application");
         setContentView(R.layout.activity_splash_screen);
 
         Thread myThread=new Thread(){

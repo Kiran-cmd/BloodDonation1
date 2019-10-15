@@ -19,18 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
@@ -111,9 +99,21 @@
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="132dp"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="77dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="189dp"
+        android:layout_marginTop="54dp"
+        android:text="TextView"
+        android:textSize="18dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

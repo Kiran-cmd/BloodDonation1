@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="58dp"
+        android:layout_alignStart="@+id/btnLogin"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -28,12 +27,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="85dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="133dp"
-        android:layout_toStartOf="@+id/btnLogin"
-        android:text="Username" />
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="137dp"
+        android:text="Username"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView2"
@@ -41,16 +43,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="206dp"
-        android:text="Password" />
+
+        android:layout_marginTop="203dp"
+        android:text="Password"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="197dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="174dp"
+        android:layout_marginBottom="195dp"
         android:background="@drawable/redbutton"
         android:text="Login" />
 
@@ -60,8 +65,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="122dp"
-        android:text="Register ?" />
+        android:layout_marginBottom="53dp"
+        android:text="Register ?"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="203dp"
@@ -70,5 +77,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:background="@drawable/logo" />
+
+    <Button
+        android:id="@+id/buttonbackLogin"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="105dp"
+        android:background="@drawable/redbutton"
+        android:text="Back" />
 
 </RelativeLayout>
